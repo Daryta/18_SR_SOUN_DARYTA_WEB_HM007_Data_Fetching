@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "4d966190-6749-4441-8caa-17e2a14a9c32",
+		"name": "Movies API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28102219"
+	},
+	"item": [
+		{
+			"name": "Get all movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://movie-api-295p.vercel.app/api",
+					"protocol": "https",
+					"host": [
+						"movie-api-295p",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get movie by movie id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://movie-api-295p.vercel.app/api/aa37014b-9d26-47bb-96c0-c904341e8764",
+					"protocol": "https",
+					"host": [
+						"movie-api-295p",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"aa37014b-9d26-47bb-96c0-c904341e8764"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get movies by movie genre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://movie-api-295p.vercel.app/api?genre=ACTIoN",
+					"protocol": "https",
+					"host": [
+						"movie-api-295p",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api"
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "ACTIoN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"movie_title\": \"Queen of Tears\",\r\n    \"released_year\": 2008,\r\n    \"director\": \"Christopher Nolan\",\r\n    \"genre\": \"Action\",\r\n    \"runtime\": 152,\r\n    \"rating\": 5,\r\n    \"description\": \"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.\",\r\n    \"image\": \"https://image.tving.com/upload/cms/caip/CAIP0400/P001731527.jpg/dims/resize/1280\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://movie-api-295p.vercel.app/api",
+					"protocol": "https",
+					"host": [
+						"movie-api-295p",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update movie by movie id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"movie_title\": \"The Shawshank Redemption\",\r\n    \"released_year\": 1994,\r\n    \"director\": \"Frank Darabont\",\r\n    \"genre\": \"Drama\",\r\n    \"runtime\": 142,\r\n    \"rating\": 0.4,\r\n    \"description\": \"In 1947, Andy Dufresne (Tim Robbins), a banker in Maine, is convicted of murdering his wife and her lover, a golf pro. Since the state of Maine has no death penalty, he is given two consecutive life sentences and sent to the notoriously harsh Shawshank Prison.\",\r\n    \"image\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://movie-api-295p.vercel.app/api/1fee3b26-c234-42a9-9a31-7d732bc2f11f",
+					"protocol": "https",
+					"host": [
+						"movie-api-295p",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"1fee3b26-c234-42a9-9a31-7d732bc2f11f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete movie by movie id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://movie-api-295p.vercel.app/api/1fee3b26-c234-42a9-9a31-7d732bc2f11f",
+					"protocol": "https",
+					"host": [
+						"movie-api-295p",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"1fee3b26-c234-42a9-9a31-7d732bc2f11f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
