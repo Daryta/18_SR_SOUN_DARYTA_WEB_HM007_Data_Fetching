@@ -4,7 +4,7 @@ import React from "react";
 const ViewDedails = () => {
   return (
     <div>
-        <CardComponent />
+      
 </div>
 
   );

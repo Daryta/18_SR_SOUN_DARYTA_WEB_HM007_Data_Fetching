@@ -17,36 +17,53 @@ export default async function Home() {
         <HeaderComponent />
       </section>
 
+      {/* All Movies */}
       <section className="mt-[606px]">
         <button className="text-2xl text-white font-bold my-6 m-11 ">
           All Movie &gt;
         </button>
         <CardComponent movies={movies} />
       </section>
-      <button className="text-2xl text-white font-bold my-6 m-11 ">
-        Action Movie &gt;
-      </button>
-      <CardComponent movies={action} />
 
-      <button className="text-2xl text-white font-bold my-6 m-11 ">
-        Drama Movie &gt;
-      </button>
-      <CardComponent movies={drama} />
+      {/* Action Movie */}
+      <section>
+        <button className="text-2xl text-white font-bold my-6 m-11 ">
+          Action Movie &gt;
+        </button>
+        <CardComponent movies={action} />
+      </section>
+ 
+      {/* Drama Movie */}
+      <section>
+        <button className="text-2xl text-white font-bold my-6 m-11 ">
+          Drama Movie &gt;
+        </button>
+        <CardComponent movies={drama} />
+      </section>
 
-      <button className="text-2xl text-white font-bold my-6 m-11 ">
-        Anime Movie &gt;
-      </button>
-      <CardComponent movies={anime} />
+      {/* Anime Movie */}
+      <section>
+        <button className="text-2xl text-white font-bold my-6 m-11 ">
+          Anime Movie &gt;
+        </button>
+        <CardComponent movies={anime} />
+      </section>
 
-      <button className="text-2xl text-white font-bold my-6 m-11 ">
-        Hollywood Movie &gt;
-      </button>
-      <CardComponent movies={hollywood} />
+      {/* Hollywood Movie */}
+      <section>
+        <button className="text-2xl text-white font-bold my-6 m-11 ">
+          Hollywood Movie &gt;
+        </button>
+        <CardComponent movies={hollywood} />
+      </section>
 
-      <button className="text-2xl text-white font-bold my-6 m-11 ">
-        Science Fiction Movie &gt;
-      </button>
-      <CardComponent movies={scifi} />
+      {/* Science Fiction Movie */}
+      <section>
+        <button className="text-2xl text-white font-bold my-6 m-11 ">
+          Science Fiction Movie &gt;
+        </button>
+        <CardComponent movies={scifi} />
+      </section>
     </main>
   );
 }

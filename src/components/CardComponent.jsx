@@ -19,9 +19,12 @@ const CardComponent = async ({movies}) => {
             <div className=" bg-gray-100 rounded-xl">
             <Link href={`/view-movie-details/${data.movie_id}`}>
               <div className="bg-white rounded-lg shadow-lg overflow-hidden max-w-lg  p-7">
+                {/* Image */}
                 <img  src={data.image ? data.image : "https://imgs.search.brave.com/r6cnIYBSgGol8Q_yxuiilQT36mGpkZjQGjKn8BJRhIs/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9lcnJv/ci00MDQtcGFnZS1u/b3QtZm91bmQtMjkw/NTQ0OTkuanBn"} alt="Image Not Found" className="w-full object-cover"/>
                 <div className="mt-6">
+                  {/* Movie Title */}
                   <h2 className="text-xl font-bold text-gray-800 line-clamp-1">{data.movie_title}</h2>
+                  {/* Movie Description */}
                   <p className="text-gray-700 w-full  mt-2 leading-tight  line-clamp-2">
                     {data.description}
                   </p>
