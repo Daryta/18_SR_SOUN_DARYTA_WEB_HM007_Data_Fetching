@@ -58,7 +58,7 @@ const MoiveId = async ({ params }) => {
             <div>
               {/* Movie Title */}
               <span className="font-bold text-2xl ">
-                {data.payload.movie_title}
+                {data.payload.movie_title}  ({data.payload.released_year})
               </span>
 
               {/* Description */}
