@@ -1,38 +1,28 @@
 import React from "react";
-import shooting from "../../public/images/shootingStar.webp";
-import Image from "next/image";
 import Link from "next/link";
-import { getAllMovieService } from "@/services/movies.service";
 
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 
 const CardComponent = async ({movies}) => {
   // console.log(movies);
   return (
     <main className="bg-[#561C24]">
-      
       <Carousel className="w-[95%] m-auto">
-        {/* <button className="text-2xl text-white font-bold my-6 mx-2  ">
-          All Movie
-        </button> */}
-      
       <CarouselContent className=" flex gap-5 mx-1">
         {movies.payload.map((data) => (
           <CarouselItem key={data.movie_id} className="pl-1 md:basis-1/2 lg:basis-1/5">
             <div className=" bg-gray-100 rounded-xl">
             <Link href={`/view-movie-details/${data.movie_id}`}>
               <div className="bg-white rounded-lg shadow-lg overflow-hidden max-w-lg  p-7">
-                <img src={data.image} alt="Mountain" className="w-full object-cover"/>
-                <div className="p-6">
-                  <h2 className="text-2xl font-bold text-gray-800 line-clamp-1">{data.movie_title}</h2>
-                  <p className="text-gray-700 leading-tight  line-clamp-2">
+                <img  src={data.image ? data.image : "https://imgs.search.brave.com/r6cnIYBSgGol8Q_yxuiilQT36mGpkZjQGjKn8BJRhIs/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9lcnJv/ci00MDQtcGFnZS1u/b3QtZm91bmQtMjkw/NTQ0OTkuanBn"} alt="Image Not Found" className="w-full object-cover"/>
+                <div className="mt-6">
+                  <h2 className="text-xl font-bold text-gray-800 line-clamp-1">{data.movie_title}</h2>
+                  <p className="text-gray-700 w-full  mt-2 leading-tight  line-clamp-2">
                     {data.description}
                   </p>
                 </div>
@@ -42,13 +32,31 @@ const CardComponent = async ({movies}) => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      
     </Carousel>
+    </main>
+  );
+};
+
+export default CardComponent;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
       {/* All Movies */}
-      {/* <section className="mx-10 ">
+       {/* <section className="mx-10 ">
         
         <button className="text-2xl text-white font-bold my-6 ">
           All Movie
@@ -76,19 +84,11 @@ const CardComponent = async ({movies}) => {
                   </p>
                 </div>
               </a>
-            // </Link>
+             </Link>
           ))}
         </div>
         </CarouselContent>
         </Carousel>
-
-      </section>
-
-      <section className="mx-10">
-        <button className="text-2xl text-white font-bold my-6 ml-2">
-          Action Movie
-        </button>
-        <div></div>
       </section> */}
 
       {/* Action Movie */}
@@ -114,10 +114,3 @@ const CardComponent = async ({movies}) => {
       </section> */}
 
 
-
-
-    </main>
-  );
-};
-
-export default CardComponent;

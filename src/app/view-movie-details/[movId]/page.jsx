@@ -1,7 +1,21 @@
-import NavbarComponent from "@/components/NavbarComponent";
-import ViewDetailComponent from "@/components/ViewDetailComponent";
 import { getMovieById } from "@/services/movies.service";
+import { FaStar} from "react-icons/fa";
 import React from "react";
+
+const StarRating = ({ rating }) => {
+  const roundedRating = Math.round(rating);
+  // const hasHalfStar = rating % 1 !== 0;
+  const fullStarsArray = Array.from({ length: roundedRating }, (_, index) => (
+    <FaStar key={index} />
+  ));
+
+  return (
+    <div className="flex text-yellow-500">
+      {fullStarsArray}
+    </div>
+  );
+};
+
 
 const MoiveId = async ({ params }) => {
   console.log("Param", params.movId);
@@ -21,23 +35,18 @@ const MoiveId = async ({ params }) => {
             </div>
           </div>
           <div className="md:flex-1 px-4 ">
-            <h2 className="text-2xl font-bold mb-2">
+            <h2 className="text-2xl font-bold ">
               {data.payload.director}
             </h2>
-            <div className=" mb-4">
+            <div>
               <div className="mr-4">{data.payload.runtime} minutes</div>
-              <div>{data.payload.genre}</div>
+              <div><i>{data.payload.genre}</i></div>
             </div>
-            <div className="mb-4">
-              {/* <span className="font-bold text-gray-700 dark:text-gray-300">Select Color:</span> */}
-              <div className="flex items-center mt-2">
-                <button className="w-6 h-6 rounded-full bg-gray-800 dark:bg-gray-200 mr-2"></button>
-                <button className="w-6 h-6 rounded-full bg-red-500 dark:bg-red-700 mr-2"></button>
-                <button className="w-6 h-6 rounded-full bg-blue-500 dark:bg-blue-700 mr-2"></button>
-                <button className="w-6 h-6 rounded-full bg-yellow-500 dark:bg-yellow-700 mr-2"></button>
-              </div>
+            <div className="mb-10">
+             <div className="flex items-center">
+                <StarRating rating={data.payload.rating} />
+                </div>
             </div>
-
             <div>
               <span className="font-bold text-2xl ">
                 {data.payload.movie_title}
@@ -46,7 +55,16 @@ const MoiveId = async ({ params }) => {
                 {data.payload.description}
               </p>
             </div>
-            <div className="mt-14">{data.payload.posted_at}</div>
+            {/* <div className="mt-14">{new Date(data.payload.posted_at).toLocalString()}</div> */}
+            <div className="mt-14">{new Date(data.payload.posted_at).toLocaleString('en-US', {
+              month: 'short',
+              day: 'numeric',
+              year: 'numeric',
+              hour: 'numeric',
+              minute: 'numeric',
+              second: 'numeric',
+              hour12: true
+            })}</div>
           </div>
         </div>
       </div>

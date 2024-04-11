@@ -16,7 +16,8 @@ const NavbarComponent = () => {
             </Link>
             <div className="flex items-center">
                 <nav className="font-sen text-gray-100 dark:text-white uppercase text-lg lg:flex items-center hidden">
-                    <a href="#" className="py-2 px-6 flex hover:bg-slate-200 hover:text-gray-800 hover:rounded-md" >
+
+                    <a href="/" className="py-2 px-6 flex hover:bg-slate-200 hover:text-gray-800 hover:rounded-md" >
                         Home
                     </a>
                     <a href="#" className="py-2 px-6 flex hover:bg-slate-200 hover:text-gray-800 hover:rounded-md">
@@ -26,10 +27,10 @@ const NavbarComponent = () => {
                         Anime
                     </a>
                     <a href="#" className="py-2 px-6 flex hover:bg-slate-200 hover:text-gray-800 hover:rounded-md">
-                        Romance
+                        Drama
                     </a>
                     <a href="#" className="py-2 px-6 flex hover:bg-slate-200 hover:text-gray-800 hover:rounded-md">
-                        Comedy
+                        Science Fiction
                     </a>
                     <input type="text" name="search" id="search" className="rounded-md ml-4 py-2 px-6 flex text-black" placeholder="Type here to search..."/>
                 </nav>

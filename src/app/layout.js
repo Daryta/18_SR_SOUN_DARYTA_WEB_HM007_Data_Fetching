@@ -16,9 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className} style={{position: "relative", background: "#561C24"}}>  
-        {/* <Image src={pic} alt="image" className="absolute -z-10  w-full object-cover h-screen" />
-        <div className="absolute w-full h-[100vh] bg-black -z-10 opacity-60 "></div> */}
+      <body className={inter.className} style={{position: "relative", background: "#561C24"}}>
         <NavbarComponent />
         {children}
         </body>
